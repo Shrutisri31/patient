@@ -13,22 +13,22 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
-    @Size(min = 3)
+    @NotBlank(message = "Name can't be blank.")
+    @Size(min = 3,message = "Name should be atleast 3 characters.")
     private String name;
 
-    @NotBlank
-    @Size(max = 20)
+    @NotBlank(message = "City can't be blank.")
+    @Size(max = 20, message = "City should be max 20 characters.")
     private String city;
 
     @Email
     private String email;
 
-    @NotBlank
-    @Size(min = 10)
+    @NotBlank(message = "Phone no. can't be blank")
+    @Size(min = 10,message = "Phone no. should be 10 digits.")
     private String phoneNumber;
 
-    @NotBlank
+    @NotBlank(message = "Speciality can't be blank")
     private String speciality;
 
     public Long getId() {
